@@ -1,21 +1,9 @@
-
-
-
-
-html {
+html,
+body {
   height: 100%;
 }
 body {
-/*
   background: url('/images/background.jpg') no-repeat center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-*/
-}
-#wrap {
-      background: url('/images/background.jpg') no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
