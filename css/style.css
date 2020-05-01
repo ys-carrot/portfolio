@@ -1,0 +1,68 @@
+html,
+body {
+  height: 100%;
+}
+body {
+  background: url('/images/background.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.contents {
+    width: 100%;
+    padding: 3%;
+}
+
+/* header */
+.header {
+  padding: 20%;
+  text-align: right;
+}
+.header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+}
+.header p {
+    text-transform: uppercase;
+}
+/* nav */
+#navbar {
+  overflow: hidden;
+  background-color: #ffffff;
+}
+#navbar a {
+  float: left;
+  display: block;
+  color: #7f78d2;
+  text-align: center;
+  padding: 14px 16px;
+  margin: 0 2%;
+  text-decoration: none;
+  font-size: 20px;
+  font-family: 'Kalam', cursive;
+
+}
+#navbar a:hover {
+  background-color: #f4eeff;
+}
+#navbar a.active {
+  border-bottom: 5px solid #7f78d2;
+  color: #7f78d2;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .card {
+  padding-top: 60px;
+}
+
+/* contents */
+/* footer */
+/*
+#sticky-footer {
+  flex-shrink: none;
+}
+*/
