@@ -1,70 +1,446 @@
-html,
-body {
-  height: 100%;
+
+html {
+	 box-sizing: border-box;
+	 font-family: "ff-meta-serif-web-pro", serif;
+	 color: #555;
+	 font-size: 16px;
 }
 /*
-body {
-  background: url('/images/background.jpg') no-repeat center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
+ @media (min-width: 6.25em) {
+	 html {
+		 font-size: 17px;
+	}
+}
+ @media (min-width: 12.5em) {
+	 html {
+		 font-size: 18px;
+	}
+}
+ @media (min-width: 18.75em) {
+	 html {
+		 font-size: 19px;
+	}
+}
+ @media (min-width: 25em) {
+	 html {
+		 font-size: 20px;
+	}
+}
+ @media (min-width: 31.25em) {
+	 html {
+		 font-size: 21px;
+	}
+}
+ @media (min-width: 37.5em) {
+	 html {
+		 font-size: 22px;
+	}
+}
+ @media (min-width: 43.75em) {
+	 html {
+		 font-size: 23px;
+	}
+}
+ @media (min-width: 50em) {
+	 html {
+		 font-size: 24px;
+	}
+}
+ @media (min-width: 56.25em) {
+	 html {
+		 font-size: 25px;
+	}
+}
+ @media (min-width: 62.5em) {
+	 html {
+		 font-size: 26px;
+	}
+}
+ @media (min-width: 68.75em) {
+	 html {
+		 font-size: 27px;
+	}
+}
+ @media (min-width: 75em) {
+	 html {
+		 font-size: 28px;
+	}
+}
+ @media (min-width: 81.25em) {
+	 html {
+		 font-size: 29px;
+	}
+}
+ @media (min-width: 87.5em) {
+	 html {
+		 font-size: 30px;
+	}
+}
+ @media (min-width: 93.75em) {
+	 html {
+		 font-size: 31px;
+	}
+}
+ @media (min-width: 100em) {
+	 html {
+		 font-size: 32px;
+	}
+}
+ @media (min-width: 106.25em) {
+	 html {
+		 font-size: 33px;
+	}
+}
+ @media (min-width: 112.5em) {
+	 html {
+		 font-size: 34px;
+	}
+}
+ @media (min-width: 118.75em) {
+	 html {
+		 font-size: 35px;
+	}
+}
+ @media (min-width: 125em) {
+	 html {
+		 font-size: 36px;
+	}
 }
 */
-.contents {
-    width: 100%;
-    padding: 3%;
+ *, *::before, *::after {
+	 box-sizing: inherit;
+	 margin: 0;
+	 padding: 0;
+}
+ a {
+	 text-decoration: none;
 }
 
-/* header */
-.header {
-  padding: 20%;
-  text-align: right;
+.logo {
+    width: 0%;    
 }
-.header h1 {
+.logo_w {
+    width: 90%;
+}
+
+.underline--magical {
+  background-image: linear-gradient(120deg, #e66465 0%, #9198e5 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
+
+}
+.underline--magical:hover {
+    background-size: 100% 88%;
+    color: #ffffff;
+}
+
+/** * The fixed Side */
+ .side {
+	 position: fixed;
+	 top: 0;
+	 left: 0;
+	 bottom: 0;
+	 z-index: 1000;
+	 width: 60px;
+	 border-right: 1px dashed rgba(0, 0, 0, .3);
+	 color: rgba(0, 0, 0, .5);
+	 text-transform: uppercase;
+	 letter-spacing: 7px;
+	 font-size: 10px;
+	 transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
+}
+ .side:hover {
+	 color: rgba(0, 0, 0, .5);
+}
+
+ .side .side__inner {
+	 position: relative;
+	 height: 100%;
+	 white-space: nowrap;
+}
+ .side a {
+	 color: inherit;
+	 word-spacing: 0;
+	 transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
+}
+ .side .top, .side .bottom {
+	 position: absolute;
+	 left: 0;
+	 transform: rotate(-90deg) perspective(1px);
+	 transform-origin: 50px 50px;
+	 height: 50px;
+	 line-height: 50px;
+	 white-space: nowrap;
+	 word-spacing: 0.5rem;
+}
+ .side .top {
+	 top: 25px;
+	 text-align: right;
+	 color: black;
+}
+ .side .bottom {
+	 top: auto;
+	 bottom: 75px;
+}
+ .side .bottom:hover a {
+	 color: rgba(0, 0, 0, .2);
+}
+ .side .bottom:hover a:hover {
+	 color: rgba(0, 0, 0, .8);
+}
+/** * The first navigation */
+ .anchornav {
+	 margin: 0;
+	 padding: 0;
+	 list-style: none;
+}
+ .anchornav li {
+	 display: block;
+}
+ .anchornav li::after {
+	 content: '';
+	 width: 30px;
+	 display: block;
+	 height: 2px;
+	 background: black;
+}
+ .anchornav li:last-child::after {
+	 display: none;
+}
+ .anchornav a {
+	 display: block;
+	 padding: 1em 0;
+	 text-transform: uppercase;
+	 font-size: 15px;
+     font-weight: bold;
+	 letter-spacing: 1.4px;
+	 color: inherit;
+	 transition: all 0.3s cubic-bezier(0.05, 0.69, 0.14, 1);
+}
+ .anchornav a span {
+	 display: inline;
+	 padding: 0.5em 0 0;
+	 opacity: 0.3;
+	 letter-spacing: normal;
+	 text-transform: none;
+}
+ .anchornav a:hover {
+	 color: #ffffff;
+}
+ .anchornav a:hover span {
+	 opacity: 1;
+	 color: #181818;
+}
+/** * The different sections */
+ .section {
+     overflow-x: hidden;
+	 position: relative;
+	 display: flex;
+	 flex-flow: column nowrap;
+	 align-items: stretch;
+	 min-height: 60vh;
+	 width: 100%;
+	 align-content: center;
+	 padding: 20vh 50px 20vh 75px;
+}
+ .section svg {
+	 position: absolute;
+	 top: -50px;
+	 left: 0;
+	 right: 0;
+	 width: 100%;
+	 height: 50px;
+}
+ .section svg.bottom {
+	 bottom: 0;
+	 top: auto;
+	 fill: grey;
+}
+ .section .section__inner {
+	 height: 100%;
+	 max-width: 800px;
+	 margin: auto auto auto 0;
+}
+ .section.section--hello {
+	 background-color: #A6B1E1;
+	 color: #181818;
+}
+.section.section--hello h2 {
     font-family: 'Pacifico', cursive;
-    font-size: 70px;
+    font-size: 60px;
+    text-align: left;
 }
-.header p {
+.section.section--hello p {
+    color: #A6B1E1;;
+    font-size: 17px;
     text-transform: uppercase;
+    text-align: center;
+    margin-top: 20px;
+    margin-right: 30%;
+    background: #ffffff;
 }
-/* nav */
-#navbar {
-  overflow: hidden;
-  background-color: #ffffff;
+ .section.section--intro img {
+    width: 30px;
 }
-#navbar a {
-  float: left;
-  display: block;
-  color: #7f78d2;
-  text-align: center;
-  padding: 14px 16px;
-  margin: 0 2%;
-  text-decoration: none;
-  font-size: 20px;
-  font-family: 'Kalam', cursive;
+@media screen and (max-width: 768px) {
+	.section.section--hello p {
+		 font-size: 15px;
+         margin: 0%;
+	}
+}
+ .section.section--intro {
+	 background-color: white;
+	 color: #555;
+}
+ .section.section--about {
+	 background-color: #de5f5f;
+	 color: white;
+}
+ .section.section--about svg {
+	 fill: #de5f5f;
+}
+ .section.section--clients {
+	 background-color: #343436;
+	 color: white;
+}
+ .section.section--clients svg {
+	 fill: #343436;
+}
+ .section.section--portfolio {
+	 background-color: orange;
+	 color: white;
+}
+ .section.section--portfolio svg {
+	 top: -20px;
+	 fill: orange;
+}
+ .section.section--portfolio svg.bottom {
+	 top: auto;
+	 bottom: -50px;
+}
+ .section.section--project1 {
+	 background-color: #3a99d8;
+	 color: white;
+}
 
+ .section.section--pepperhill svg {
+	 top: -50px;
+	 fill: #3a99d8;
 }
-#navbar a:hover {
-  background-color: #f4eeff;
+ .section.section--contact svg {
+	 fill: white;
 }
-#navbar a.active {
-  border-bottom: 5px solid #7f78d2;
-  color: #7f78d2;
+/** * Typo */
+ h1, .h1, h2, .h2, h3, .h3, h4, .h5 {
+/*	 font-family: "nimbus-sans", sans-serif;*/
+	 font-weight: bold;
+	 margin: 0 0 1em;
+	 line-height: 1;
+	 letter-spacing: -1px;
 }
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-.sticky + .card {
-  padding-top: 60px;
-}
-
-/* contents */
-/* footer */
 /*
-#sticky-footer {
-  flex-shrink: none;
+ @media (min-width: 30rem) {
+	 h1, .h1, h2, .h2, h3, .h3, h4, .h5 {
+		 letter-spacing: -2px;
+	}
 }
 */
+ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h5 a {
+	 color: inherit;
+}
+ h1 a:hover, .h1 a:hover, h2 a:hover, .h2 a:hover, h3 a:hover, .h3 a:hover, h4 a:hover, .h5 a:hover {
+	 border-bottom: 0.1875rem solid;
+}
+ h1 span, .h1 span, h2 span, .h2 span, h3 span, .h3 span, h4 span, .h5 span {
+/*	 color: #de5f5f;*/
+}
+ h1, .h1 {
+	 font-size: 1.2rem;
+}
+/*
+ @media (min-width: 30rem) {
+	 h1, .h1 {
+		 font-size: 2.5rem;
+	}
+}
+ h2, .h2 {
+	 font-size: 1.2rem;
+}
+ @media (min-width: 30rem) {
+	 h2, .h2 {
+		 font-size: 2.5rem;
+	}
+}
+*/
+ .pre {
+	 display: inline-block;
+	 font-size: 12px;
+	 margin: 0;
+	 opacity: 0.8;
+	 letter-spacing: 1.4px;
+	 word-spacing: 0.2rem;
+	 text-transform: uppercase;
+	 margin-bottom: 1em;
+	 color: inherit;
+}
+ .pre span {
+	 font-size: 0.9em;
+	 margin-right: 0.4em;
+	 opacity: 0.5;
+}
+ .pre:hover {
+	 opacity: 1;
+}
+ p {
+	 font-size: 0.75rem;
+	 line-height: 1.4;
+}
+ @media (min-width: 30rem) {
+	 p {
+		 font-size: 0.875rem;
+	}
+}
+ p a {
+	 font-weight: bold;
+	 color: inherit;
+}
+ p a:hover {
+	 border-bottom: 0.1875rem solid;
+}
+ .lead {
+	 display: block;
+	 font-size: 10px;
+	 margin: 0;
+}
+/*
+ .portfolio {
+	 font-size: 0.75rem;
+}
+ .portfolio.block {
+	 display: inline-block;
+	 width: 100%;
+}
+/*
+ @media (min-width: 30rem) {
+	 .portfolio.block {
+		 width: 30%;
+	}
+}
+*/
+ .portfolio .link {
+	 display: block;
+	 margin: 2em 0 0 0;
+	 color: #555;
+	 letter-spacing: 2px;
+	 font-size: 12px;
+}
+ .portfolio p {
+	 font-size: inherit;
+	 color: #343436;
+	 opacity: 0.7;
+}
+ @media (max-width: 767px) {
+
+}
